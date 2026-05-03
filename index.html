@@ -307,24 +307,45 @@
     .location-card.reverse > * { direction: ltr; }
   }
 
-  .img-placeholder {
+  /* ── GALLERY ── */
+  .gallery {
     border-radius: 16px; overflow: hidden;
-    background: linear-gradient(135deg, #1a3a5c, #1a3d2b);
-    min-height: 280px; display: flex; align-items: center; justify-content: center;
-    flex-direction: column; gap: 0.75rem;
-    border: 2px dashed rgba(255,255,255,0.15);
-    position: relative;
-    cursor: pointer;
+    position: relative; min-height: 280px;
+    background: #1a3a5c;
   }
-  .img-placeholder .ph-icon { font-size: 2.5rem; opacity: 0.5; }
-  .img-placeholder .ph-text {
-    font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase;
-    color: rgba(255,255,255,0.5);
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    font-weight: 600;
+  .gallery-slides {
+    position: relative; width: 100%; min-height: 280px; height: 100%;
   }
-  .img-placeholder img {
-    position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+  .gallery-slide {
+    position: absolute; inset: 0;
+    opacity: 0; transition: opacity 0.65s ease-in-out;
+  }
+  .gallery-slide.active { opacity: 1; }
+  .gallery-slide img {
+    width: 100%; height: 100%; min-height: 280px; object-fit: cover; display: block;
+  }
+  .gallery-btn {
+    position: absolute; top: 50%; transform: translateY(-50%);
+    background: rgba(0,0,0,0.38); backdrop-filter: blur(4px);
+    color: #fff; border: none; width: 38px; height: 38px; border-radius: 50%;
+    font-size: 1.3rem; line-height: 1; cursor: pointer; z-index: 10;
+    display: flex; align-items: center; justify-content: center;
+    transition: background 0.2s; user-select: none;
+  }
+  .gallery-btn:hover { background: rgba(0,0,0,0.62); }
+  .gallery-prev { left: 10px; }
+  .gallery-next { right: 10px; }
+  .gallery-dots {
+    position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%);
+    display: flex; gap: 7px; z-index: 10;
+  }
+  .gallery-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: rgba(255,255,255,0.4); border: none; padding: 0; cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .gallery-dot.active {
+    background: #fff; transform: scale(1.3);
   }
 
   .location-info {}
@@ -747,12 +768,28 @@
 
       <!-- Cabin -->
       <div class="location-card">
-        <!-- ★ CABIN IMAGE PLACEHOLDER — replace div below with <img> tag or set src on existing img ★ -->
-        <div class="img-placeholder">
-          <div class="ph-icon">🏡</div>
-          <div class="ph-text">[Cabin Image]</div>
+        <div class="gallery">
+          <div class="gallery-slides">
+            <div class="gallery-slide active"><img src="images/cabin/CabinImage1.jpg" alt="Skyline Mountain Resort"></div>
+            <div class="gallery-slide"><img src="images/cabin/CabinImage2.jpg" alt="Skyline Mountain Resort"></div>
+            <div class="gallery-slide"><img src="images/cabin/CabinImage3.jpg" alt="Skyline Mountain Resort"></div>
+            <div class="gallery-slide"><img src="images/cabin/CabinImage4.jpeg" alt="Skyline Mountain Resort"></div>
+            <div class="gallery-slide"><img src="images/cabin/CabinImage5.jpeg" alt="Skyline Mountain Resort"></div>
+            <div class="gallery-slide"><img src="images/cabin/CabinImage6.jpg" alt="Skyline Mountain Resort"></div>
+            <div class="gallery-slide"><img src="images/cabin/CabinImage7.jpg" alt="Skyline Mountain Resort"></div>
+          </div>
+          <button class="gallery-btn gallery-prev" aria-label="Previous">&#8249;</button>
+          <button class="gallery-btn gallery-next" aria-label="Next">&#8250;</button>
+          <div class="gallery-dots">
+            <button class="gallery-dot active" aria-label="Slide 1"></button>
+            <button class="gallery-dot" aria-label="Slide 2"></button>
+            <button class="gallery-dot" aria-label="Slide 3"></button>
+            <button class="gallery-dot" aria-label="Slide 4"></button>
+            <button class="gallery-dot" aria-label="Slide 5"></button>
+            <button class="gallery-dot" aria-label="Slide 6"></button>
+            <button class="gallery-dot" aria-label="Slide 7"></button>
+          </div>
         </div>
-        <!-- ★ END CABIN IMAGE PLACEHOLDER ★ -->
         <div class="location-info">
           <div class="location-eyebrow">Our Base Camp</div>
           <h3 class="location-name">Skyline Mountain Resort</h3>
@@ -776,12 +813,20 @@
 
       <!-- Palisade -->
       <div class="location-card reverse">
-        <!-- ★ PALISADE IMAGE PLACEHOLDER ★ -->
-        <div class="img-placeholder">
-          <div class="ph-icon">🏊</div>
-          <div class="ph-text">[Palisade Image]</div>
+        <div class="gallery">
+          <div class="gallery-slides">
+            <div class="gallery-slide active"><img src="images/palisade/PalisadeImage1.jpg" alt="Palisade State Park"></div>
+            <div class="gallery-slide"><img src="images/palisade/PalisadeImage2.jpg" alt="Palisade State Park"></div>
+            <div class="gallery-slide"><img src="images/palisade/PalisadeImage3.jpg" alt="Palisade State Park"></div>
+          </div>
+          <button class="gallery-btn gallery-prev" aria-label="Previous">&#8249;</button>
+          <button class="gallery-btn gallery-next" aria-label="Next">&#8250;</button>
+          <div class="gallery-dots">
+            <button class="gallery-dot active" aria-label="Slide 1"></button>
+            <button class="gallery-dot" aria-label="Slide 2"></button>
+            <button class="gallery-dot" aria-label="Slide 3"></button>
+          </div>
         </div>
-        <!-- ★ END PALISADE IMAGE PLACEHOLDER ★ -->
         <div class="location-info">
           <div class="location-eyebrow">Thursday's Big Day</div>
           <h3 class="location-name">Palisade State Park</h3>
@@ -804,12 +849,24 @@
 
       <!-- Maple Canyon -->
       <div class="location-card">
-        <!-- ★ MAPLE CANYON IMAGE PLACEHOLDER ★ -->
-        <div class="img-placeholder">
-          <div class="ph-icon">🧗</div>
-          <div class="ph-text">[Maple Canyon Image]</div>
+        <div class="gallery">
+          <div class="gallery-slides">
+            <div class="gallery-slide active"><img src="images/maple-canyon/MapleCanyonImage0.png" alt="Maple Canyon"></div>
+            <div class="gallery-slide"><img src="images/maple-canyon/MapleCanyonImage1.png" alt="Maple Canyon"></div>
+            <div class="gallery-slide"><img src="images/maple-canyon/MapleCanyonImage2.png" alt="Maple Canyon"></div>
+            <div class="gallery-slide"><img src="images/maple-canyon/MapleCanyonImage3.png" alt="Maple Canyon"></div>
+            <div class="gallery-slide"><img src="images/maple-canyon/MapleCanyonImage4.png" alt="Maple Canyon"></div>
+          </div>
+          <button class="gallery-btn gallery-prev" aria-label="Previous">&#8249;</button>
+          <button class="gallery-btn gallery-next" aria-label="Next">&#8250;</button>
+          <div class="gallery-dots">
+            <button class="gallery-dot active" aria-label="Slide 1"></button>
+            <button class="gallery-dot" aria-label="Slide 2"></button>
+            <button class="gallery-dot" aria-label="Slide 3"></button>
+            <button class="gallery-dot" aria-label="Slide 4"></button>
+            <button class="gallery-dot" aria-label="Slide 5"></button>
+          </div>
         </div>
-        <!-- ★ END MAPLE CANYON IMAGE PLACEHOLDER ★ -->
         <div class="location-info">
           <div class="location-eyebrow">Friday's Adventure</div>
           <h3 class="location-name">Maple Canyon</h3>
@@ -1054,5 +1111,35 @@
   Skyline Mountain Resort · Fairview, Utah · July 15–18, 2026
 </footer>
 
+<script>
+(function () {
+  document.querySelectorAll('.gallery').forEach(function (gallery) {
+    var slides = gallery.querySelectorAll('.gallery-slide');
+    var dots   = gallery.querySelectorAll('.gallery-dot');
+    var current = 0;
+    var timer;
+
+    function goTo(i) {
+      slides[current].classList.remove('active');
+      dots[current].classList.remove('active');
+      current = (i + slides.length) % slides.length;
+      slides[current].classList.add('active');
+      dots[current].classList.add('active');
+    }
+
+    function start() { timer = setInterval(function () { goTo(current + 1); }, 4000); }
+    function stop()  { clearInterval(timer); }
+
+    gallery.querySelector('.gallery-prev').addEventListener('click', function () { goTo(current - 1); stop(); start(); });
+    gallery.querySelector('.gallery-next').addEventListener('click', function () { goTo(current + 1); stop(); start(); });
+    dots.forEach(function (dot, i) { dot.addEventListener('click', function () { goTo(i); stop(); start(); }); });
+
+    gallery.addEventListener('mouseenter', stop);
+    gallery.addEventListener('mouseleave', start);
+
+    start();
+  });
+})();
+</script>
 </body>
 </html>

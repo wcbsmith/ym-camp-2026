@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Young Men's Camp 2026 — Skyline Mountain Resort</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #0d2137;
+    --navy-mid: #1a3a5c;
+    --navy-light: #1e4976;
+    --forest: #1a3d2b;
+    --forest-mid: #2a5e40;
+    --forest-light: #3a7a53;
+    --pine: #4a8f63;
+    --amber: #d97706;
+    --amber-light: #f59e0b;
+    --amber-pale: #fef3c7;
+    --gold: #fbbf24;
+    --cream: #fdf8f0;
+    --warm-white: #fffdf8;
+    --text-dark: #1a1a2e;
+    --text-mid: #374151;
+    --text-light: #6b7280;
+    --border: rgba(0,0,0,0.08);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Georgia, serif;
+    background: var(--cream);
+    color: var(--text-dark);
+    line-height: 1.6;
+    font-size: 16px;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(13, 33, 55, 0.96);
+    backdrop-filter: blur(8px);
+    padding: 0.75rem 1.5rem;
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  nav .logo {
+    font-size: 0.8rem; font-weight: 700; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--gold);
+  }
+  nav ul { list-style: none; display: flex; gap: 1.5rem; }
+  nav ul li a {
+    color: rgba(255,255,255,0.8); text-decoration: none;
+    font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    transition: color 0.2s;
+  }
+  nav ul li a:hover { color: var(--gold); }
+  @media (max-width: 640px) { nav ul { display: none; } }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    background: linear-gradient(160deg, #0d1f35 0%, #0f2d1f 50%, #1a1408 100%);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center;
+    padding: 6rem 1.5rem 4rem;
+    position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image:
+      radial-gradient(ellipse at 20% 50%, rgba(26, 61, 43, 0.4) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 50%, rgba(13, 33, 55, 0.5) 0%, transparent 60%),
+      radial-gradient(ellipse at 50% 80%, rgba(217, 119, 6, 0.08) 0%, transparent 50%);
+    pointer-events: none;
+  }
+  .stars {
+    position: absolute; inset: 0; pointer-events: none;
+    background-image:
+      radial-gradient(1px 1px at 15% 20%, rgba(255,255,255,0.6), transparent),
+      radial-gradient(1px 1px at 35% 10%, rgba(255,255,255,0.4), transparent),
+      radial-gradient(1.5px 1.5px at 55% 15%, rgba(255,255,255,0.7), transparent),
+      radial-gradient(1px 1px at 75% 8%, rgba(255,255,255,0.5), transparent),
+      radial-gradient(1px 1px at 90% 25%, rgba(255,255,255,0.4), transparent),
+      radial-gradient(1px 1px at 25% 35%, rgba(255,255,255,0.3), transparent),
+      radial-gradient(1px 1px at 65% 30%, rgba(255,255,255,0.5), transparent),
+      radial-gradient(1.5px 1.5px at 10% 50%, rgba(255,255,255,0.4), transparent),
+      radial-gradient(1px 1px at 80% 45%, rgba(255,255,255,0.3), transparent),
+      radial-gradient(1px 1px at 45% 55%, rgba(255,255,255,0.5), transparent),
+      radial-gradient(1px 1px at 5% 70%, rgba(255,255,255,0.3), transparent),
+      radial-gradient(1.5px 1.5px at 95% 60%, rgba(255,255,255,0.5), transparent);
+  }
+  .hero-tag {
+    display: inline-block;
+    background: rgba(217,119,6,0.2);
+    border: 1px solid rgba(251,191,36,0.4);
+    color: var(--gold);
+    font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase;
+    padding: 0.3rem 1rem; border-radius: 100px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    margin-bottom: 1.5rem; position: relative;
+  }
+
+  /* ── THEME PLACEHOLDER ── */
+  .theme-placeholder {
+    position: relative;
+    background: linear-gradient(135deg, rgba(217,119,6,0.15), rgba(251,191,36,0.08));
+    border: 2px dashed rgba(251,191,36,0.5);
+    border-radius: 12px;
+    padding: 1.25rem 2rem;
+    margin: 0 auto 2rem;
+    max-width: 680px;
+    width: 100%;
+  }
+  .theme-placeholder .placeholder-label {
+    display: inline-block;
+    background: var(--amber);
+    color: #fff;
+    font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-weight: 700;
+    padding: 0.2rem 0.6rem; border-radius: 4px;
+    position: absolute; top: -0.6rem; left: 1rem;
+  }
+  .theme-placeholder .theme-text {
+    font-size: clamp(1.1rem, 3vw, 1.5rem);
+    font-weight: 700;
+    font-style: italic;
+    color: rgba(255,255,255,0.85);
+    letter-spacing: 0.01em;
+    line-height: 1.3;
+  }
+  .theme-placeholder .theme-sub {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.45);
+    margin-top: 0.3rem;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-style: normal;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.8rem, 8vw, 5.5rem);
+    font-weight: 900;
+    color: #fff;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    position: relative;
+    margin-bottom: 0.5rem;
+  }
+  .hero h1 span { color: var(--gold); }
+  .hero-sub {
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 0.75rem;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    position: relative;
+  }
+  .hero-meta {
+    display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;
+    margin-bottom: 2.5rem; position: relative;
+  }
+  .hero-meta span {
+    display: flex; align-items: center; gap: 0.4rem;
+    color: rgba(255,255,255,0.65);
+    font-size: 0.85rem;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+  .hero-meta .dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--gold); display: inline-block; flex-shrink: 0;
+  }
+  .hero-intro {
+    font-size: clamp(1rem, 2vw, 1.15rem);
+    color: rgba(255,255,255,0.8);
+    max-width: 600px;
+    margin: 0 auto 3rem;
+    line-height: 1.7;
+    position: relative;
+  }
+  .hero-cta {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--amber), var(--gold));
+    color: var(--navy);
+    font-weight: 700;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 0.85rem 2.5rem; border-radius: 100px;
+    text-decoration: none; position: relative;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 24px rgba(217,119,6,0.35);
+  }
+  .hero-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(217,119,6,0.45); }
+
+  .scroll-hint {
+    position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
+    display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+    color: rgba(255,255,255,0.3);
+    font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    animation: bounce 2s infinite;
+  }
+  .scroll-hint::after {
+    content: '↓'; font-size: 1.1rem; color: rgba(255,255,255,0.3);
+  }
+  @keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(6px); }
+  }
+
+  /* ── SECTIONS ── */
+  section { padding: 5rem 1.5rem; }
+  .container { max-width: 900px; margin: 0 auto; }
+
+  .section-label {
+    font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    color: var(--pine);
+    margin-bottom: 0.5rem; font-weight: 700;
+  }
+  .section-title {
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    font-weight: 800; line-height: 1.15; letter-spacing: -0.01em;
+    color: var(--navy); margin-bottom: 1rem;
+  }
+  .section-lead {
+    font-size: 1.05rem; color: var(--text-mid);
+    max-width: 600px; line-height: 1.7; margin-bottom: 3rem;
+  }
+
+  /* ── SCHEDULE ── */
+  #schedule { background: var(--warm-white); }
+
+  .days-grid { display: flex; flex-direction: column; gap: 2rem; }
+
+  .day-card {
+    border-radius: 16px; overflow: hidden;
+    border: 1px solid var(--border);
+    box-shadow: 0 2px 16px rgba(0,0,0,0.04);
+    background: #fff;
+  }
+  .day-header {
+    display: flex; align-items: center; gap: 1rem;
+    padding: 1.25rem 1.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .day-icon {
+    width: 48px; height: 48px; border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.4rem; flex-shrink: 0;
+  }
+  .day-icon.wed { background: #e0f2fe; }
+  .day-icon.thu { background: #d1fae5; }
+  .day-icon.fri { background: #fef3c7; }
+  .day-icon.sat { background: #fce7f3; }
+
+  .day-label {
+    font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    color: var(--text-light); font-weight: 600; margin-bottom: 0.15rem;
+  }
+  .day-title {
+    font-size: 1.15rem; font-weight: 800; color: var(--navy); line-height: 1.2;
+  }
+  .day-body { padding: 1.25rem 1.5rem; }
+  .timeline { list-style: none; }
+  .timeline li {
+    display: flex; align-items: flex-start; gap: 0.9rem;
+    padding: 0.55rem 0;
+    border-bottom: 1px solid rgba(0,0,0,0.04);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 0.9rem; color: var(--text-mid);
+  }
+  .timeline li:last-child { border-bottom: none; }
+  .timeline .time {
+    min-width: 64px; font-size: 0.72rem; font-weight: 700;
+    color: var(--pine); letter-spacing: 0.04em; padding-top: 0.15rem;
+    flex-shrink: 0;
+  }
+  .timeline .event { flex: 1; line-height: 1.5; }
+  .timeline .event strong { color: var(--text-dark); font-weight: 600; }
+
+  .highlight-badge {
+    display: inline-block;
+    font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase;
+    font-weight: 700; padding: 0.15rem 0.5rem; border-radius: 100px;
+    margin-left: 0.4rem; vertical-align: middle;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+  .badge-blue { background: #dbeafe; color: #1d4ed8; }
+  .badge-green { background: #d1fae5; color: #065f46; }
+  .badge-amber { background: #fef3c7; color: #92400e; }
+  .badge-rose { background: #fce7f3; color: #9d174d; }
+
+  /* ── LOCATIONS ── */
+  #locations { background: var(--cream); }
+
+  .locations-grid { display: flex; flex-direction: column; gap: 4rem; }
+
+  .location-card { display: grid; gap: 2rem; }
+  @media (min-width: 700px) {
+    .location-card { grid-template-columns: 1fr 1fr; align-items: center; }
+    .location-card.reverse { direction: rtl; }
+    .location-card.reverse > * { direction: ltr; }
+  }
+
+  .img-placeholder {
+    border-radius: 16px; overflow: hidden;
+    background: linear-gradient(135deg, #1a3a5c, #1a3d2b);
+    min-height: 280px; display: flex; align-items: center; justify-content: center;
+    flex-direction: column; gap: 0.75rem;
+    border: 2px dashed rgba(255,255,255,0.15);
+    position: relative;
+    cursor: pointer;
+  }
+  .img-placeholder .ph-icon { font-size: 2.5rem; opacity: 0.5; }
+  .img-placeholder .ph-text {
+    font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-weight: 600;
+  }
+  .img-placeholder img {
+    position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+  }
+
+  .location-info {}
+  .location-eyebrow {
+    font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--pine); font-weight: 700;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    margin-bottom: 0.5rem;
+  }
+  .location-name {
+    font-size: clamp(1.4rem, 3vw, 1.8rem); font-weight: 800;
+    color: var(--navy); line-height: 1.15; margin-bottom: 0.6rem;
+    letter-spacing: -0.01em;
+  }
+  .location-desc {
+    font-size: 0.95rem; color: var(--text-mid); line-height: 1.7; margin-bottom: 1rem;
+  }
+  .activity-chips { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .chip {
+    font-size: 0.72rem; padding: 0.28rem 0.75rem; border-radius: 100px;
+    border: 1px solid rgba(26,61,43,0.2);
+    color: var(--forest-mid); background: rgba(26,93,64,0.07);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-weight: 600; letter-spacing: 0.04em;
+  }
+  .location-meta {
+    display: flex; align-items: center; gap: 0.4rem;
+    font-size: 0.78rem; color: var(--text-light);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    margin-bottom: 0.75rem;
+  }
+  .location-meta .dot { width: 4px; height: 4px; border-radius: 50%; background: var(--text-light); display: inline-block; }
+
+  /* ── PACKING ── */
+  #packing { background: linear-gradient(160deg, var(--navy), var(--forest) 100%); }
+  #packing .section-label { color: var(--gold); }
+  #packing .section-title { color: #fff; }
+  #packing .section-lead { color: rgba(255,255,255,0.7); }
+
+  .packing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+  .pack-item {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px; padding: 1rem 1.1rem;
+    display: flex; gap: 0.75rem; align-items: flex-start;
+    transition: background 0.2s;
+  }
+  .pack-item:hover { background: rgba(255,255,255,0.1); }
+  .pack-item .pi { font-size: 1.3rem; flex-shrink: 0; margin-top: 0.05rem; }
+  .pack-item .pc { }
+  .pack-item .pt {
+    font-size: 0.88rem; font-weight: 700; color: rgba(255,255,255,0.92);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    margin-bottom: 0.15rem;
+  }
+  .pack-item .ps {
+    font-size: 0.75rem; color: rgba(255,255,255,0.5);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+  .packing-note {
+    margin-top: 2rem; padding: 1.1rem 1.5rem;
+    background: rgba(251,191,36,0.1); border: 1px solid rgba(251,191,36,0.25);
+    border-radius: 12px;
+    color: rgba(255,255,255,0.8);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 0.88rem; line-height: 1.6;
+  }
+  .packing-note strong { color: var(--gold); }
+
+  /* ── SPIRITUAL ── */
+  #spiritual { background: var(--warm-white); }
+
+  .spiritual-theme-block {
+    background: linear-gradient(135deg, var(--navy-mid), var(--forest));
+    border-radius: 16px; padding: 2.5rem 2rem;
+    text-align: center; margin-bottom: 2.5rem;
+    position: relative; overflow: hidden;
+  }
+  .spiritual-theme-block::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at center, rgba(251,191,36,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .spiritual-theme-block .placeholder-label2 {
+    display: inline-block;
+    background: var(--amber);
+    color: #fff;
+    font-size: 0.6rem; letter-spacing: 0.14em; text-transform: uppercase;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-weight: 700;
+    padding: 0.2rem 0.6rem; border-radius: 4px;
+    margin-bottom: 1rem;
+  }
+  .spiritual-theme-block .sth-text {
+    font-size: clamp(1.1rem, 3vw, 1.6rem);
+    font-weight: 800; font-style: italic;
+    color: rgba(255,255,255,0.85); line-height: 1.3; margin-bottom: 0.4rem;
+  }
+  .spiritual-theme-block .sth-sub {
+    font-size: 0.78rem; color: rgba(255,255,255,0.45);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  .spiritual-pillars { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.25rem; }
+  .pillar {
+    background: #fff; border: 1px solid var(--border);
+    border-radius: 14px; padding: 1.4rem 1.25rem;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .pillar:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+  .pillar .pi { font-size: 1.8rem; margin-bottom: 0.6rem; }
+  .pillar h4 {
+    font-size: 0.88rem; font-weight: 700; color: var(--navy);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    margin-bottom: 0.3rem;
+  }
+  .pillar p {
+    font-size: 0.78rem; color: var(--text-light);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    line-height: 1.5;
+  }
+
+  /* ── PARENT INFO ── */
+  #parents { background: var(--cream); }
+
+  .parent-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem; margin-bottom: 2.5rem; }
+  .info-card {
+    background: #fff; border: 1px solid var(--border);
+    border-radius: 14px; padding: 1.4rem 1.25rem;
+    transition: box-shadow 0.2s;
+  }
+  .info-card:hover { box-shadow: 0 6px 20px rgba(0,0,0,0.07); }
+  .info-card .ic-head {
+    display: flex; align-items: center; gap: 0.75rem;
+    margin-bottom: 0.85rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .info-card .ic-icon {
+    width: 38px; height: 38px; border-radius: 10px;
+    background: rgba(26,77,118,0.1);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.1rem; flex-shrink: 0;
+  }
+  .info-card .ic-title {
+    font-size: 0.85rem; font-weight: 700; color: var(--navy);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+  .info-card ul { list-style: none; }
+  .info-card ul li {
+    font-size: 0.83rem; color: var(--text-mid);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    padding: 0.28rem 0; border-bottom: 1px solid rgba(0,0,0,0.04);
+    display: flex; gap: 0.5rem; align-items: flex-start;
+    line-height: 1.5;
+  }
+  .info-card ul li:last-child { border-bottom: none; }
+  .info-card ul li::before { content: '›'; color: var(--pine); font-weight: 700; flex-shrink: 0; margin-top: 0.05rem; }
+
+  .contact-block {
+    background: linear-gradient(135deg, var(--navy), var(--navy-mid));
+    border-radius: 16px; padding: 2rem;
+    display: flex; gap: 2rem; align-items: center; flex-wrap: wrap;
+  }
+  .contact-block .cb-text { flex: 1; min-width: 200px; }
+  .contact-block .cb-text h3 {
+    font-size: 1.1rem; font-weight: 800; color: #fff; margin-bottom: 0.4rem;
+  }
+  .contact-block .cb-text p {
+    font-size: 0.85rem; color: rgba(255,255,255,0.65);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    line-height: 1.6;
+  }
+  .contact-block .cb-detail {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 12px; padding: 1.1rem 1.4rem; min-width: 200px;
+  }
+  .contact-block .cb-detail .cdl {
+    font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--gold); font-weight: 700;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    margin-bottom: 0.3rem;
+  }
+  .contact-block .cb-detail .cdv {
+    font-size: 1rem; font-weight: 700; color: #fff;
+  }
+  .contact-block .cb-detail .cdv.placeholder {
+    font-style: italic; color: rgba(255,255,255,0.5); font-size: 0.88rem;
+  }
+
+  /* ── FAQ / CTA ── */
+  #cta { background: linear-gradient(160deg, var(--forest), var(--navy) 100%); padding: 4rem 1.5rem; text-align: center; }
+  #cta .section-title { color: #fff; }
+  #cta .section-lead { color: rgba(255,255,255,0.7); margin: 0 auto 2.5rem; }
+
+  .faq-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; margin-bottom: 2.5rem; text-align: left; }
+  .faq-item {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px; padding: 1.2rem;
+  }
+  .faq-item h4 {
+    font-size: 0.85rem; font-weight: 700; color: rgba(255,255,255,0.9);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    margin-bottom: 0.4rem;
+  }
+  .faq-item p {
+    font-size: 0.78rem; color: rgba(255,255,255,0.55);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    line-height: 1.6;
+  }
+  .faq-item p strong { color: var(--gold); }
+
+  .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+  .btn-primary {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--amber), var(--gold));
+    color: var(--navy); font-weight: 700;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase;
+    padding: 0.85rem 2.2rem; border-radius: 100px;
+    text-decoration: none; transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 20px rgba(217,119,6,0.35);
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(217,119,6,0.45); }
+  .btn-ghost {
+    display: inline-block;
+    background: transparent;
+    color: rgba(255,255,255,0.8); font-weight: 700;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase;
+    padding: 0.85rem 2.2rem; border-radius: 100px;
+    border: 1.5px solid rgba(255,255,255,0.25);
+    text-decoration: none; transition: border-color 0.2s, color 0.2s, background 0.2s;
+  }
+  .btn-ghost:hover { border-color: rgba(255,255,255,0.5); background: rgba(255,255,255,0.06); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--navy);
+    text-align: center; padding: 2rem 1.5rem;
+    color: rgba(255,255,255,0.3);
+    font-size: 0.75rem;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    letter-spacing: 0.04em; line-height: 1.8;
+  }
+  footer strong { color: rgba(255,255,255,0.5); }
+
+  /* ── DIVIDERS ── */
+  .mountain-divider {
+    height: 80px; overflow: hidden; line-height: 0;
+    background: var(--warm-white);
+  }
+  .mountain-divider svg { display: block; width: 100%; height: 100%; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 600px) {
+    .hero-meta { gap: 0.75rem; }
+    section { padding: 3.5rem 1.25rem; }
+    .contact-block { flex-direction: column; }
+    .contact-block .cb-detail { width: 100%; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">YM Camp '26</div>
+  <ul>
+    <li><a href="#schedule">Schedule</a></li>
+    <li><a href="#locations">Locations</a></li>
+    <li><a href="#packing">Packing</a></li>
+    <li><a href="#parents">Parent Info</a></li>
+    <li><a href="#cta">Questions</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="stars"></div>
+
+  <!-- ★ THEME PLACEHOLDER — replace the text below with bishop's theme ★ -->
+  <div class="theme-placeholder">
+    <span class="placeholder-label">⚑ Theme Placeholder — Replace with Bishop's Theme</span>
+    <div class="theme-text">[Bishop's theme to be added — will tie to the 2026 Church Youth Theme]</div>
+    <div class="theme-sub">This block will display the official camp theme once confirmed.</div>
+  </div>
+  <!-- ★ END THEME PLACEHOLDER ★ -->
+
+  <div class="hero-tag">The Church of Jesus Christ of Latter-day Saints</div>
+  <h1>Young Men's<br><span>Camp 2026</span></h1>
+  <p class="hero-sub">Skyline Mountain Resort · Fairview, Utah</p>
+
+  <div class="hero-meta">
+    <span><span class="dot"></span> July 15–18, 2026</span>
+    <span><span class="dot"></span> 15 Young Men + Leaders</span>
+    <span><span class="dot"></span> ~6,100 ft Elevation</span>
+    <span><span class="dot"></span> 1 hr 20 min from SLC</span>
+  </div>
+
+  <p class="hero-intro">
+    This summer, we're heading to the mountains for four days of adventure, brotherhood, and something bigger than ourselves — bouldering canyons, lakeside afternoons, campfire testimonies, and skies so clear you can count the stars.
+  </p>
+
+  <a href="#schedule" class="hero-cta">See the Adventure ↓</a>
+  <div class="scroll-hint">Scroll</div>
+</section>
+
+<!-- SCHEDULE -->
+<section id="schedule">
+  <div class="container">
+    <div class="section-label">Day by Day</div>
+    <h2 class="section-title">What We're Doing</h2>
+    <p class="section-lead">Four days. Every one of them planned by the young men themselves. Here's what's coming.</p>
+
+    <div class="days-grid">
+
+      <!-- Wednesday -->
+      <div class="day-card">
+        <div class="day-header">
+          <div class="day-icon wed">🌙</div>
+          <div>
+            <div class="day-label">Day 1 · Wednesday, July 15</div>
+            <div class="day-title">Travel & Arrival</div>
+          </div>
+        </div>
+        <div class="day-body">
+          <ul class="timeline">
+            <li><span class="time">Before</span><span class="event">Eat dinner at home before departure</span></li>
+            <li><span class="time">7:00 PM</span><span class="event"><strong>Depart</strong> — ~80 min drive to Fairview</span></li>
+            <li><span class="time">8:30 PM</span><span class="event"><strong>Arrive at the cabin</strong> — unpack, claim your spot (cabin or tent)</span></li>
+            <li><span class="time">Evening</span><span class="event"><strong>Welcome campfire with s'mores</strong> <span class="highlight-badge badge-amber">Campfire</span></span></li>
+            <li><span class="time">Later</span><span class="event">Optional night games (play it by ear)</span></li>
+            <li><span class="time">10:30 PM</span><span class="event">Lights out</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Thursday -->
+      <div class="day-card">
+        <div class="day-header">
+          <div class="day-icon thu">🏊</div>
+          <div>
+            <div class="day-label">Day 2 · Thursday, July 16</div>
+            <div class="day-title">Palisade Day</div>
+          </div>
+        </div>
+        <div class="day-body">
+          <ul class="timeline">
+            <li><span class="time">Morning</span><span class="event"><strong>Breakfast burritos</strong> — pack brown bag lunches</span></li>
+            <li><span class="time">9:30 AM</span><span class="event">Depart for Palisade State Park (~35 min)</span></li>
+            <li><span class="time">10 AM–4 PM</span><span class="event"><strong>Palisade State Park</strong> <span class="highlight-badge badge-blue">Full Day</span> — swimming, fishing, paddleboards &amp; kayaks, sand beach, lawn games</span></li>
+            <li><span class="time">Afternoon</span><span class="event">Return to cabin</span></li>
+            <li><span class="time">Dinner</span><span class="event"><strong>Burgers on the grill</strong></span></li>
+            <li><span class="time">Evening</span><span class="event"><strong>Fireside</strong> <span class="highlight-badge badge-amber">Main Spiritual Evening</span></span></li>
+            <li><span class="time">Night</span><span class="event">Night games &amp; stargazing</span></li>
+            <li><span class="time">10:30 PM</span><span class="event">Lights out</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Friday -->
+      <div class="day-card">
+        <div class="day-header">
+          <div class="day-icon fri">🧗</div>
+          <div>
+            <div class="day-label">Day 3 · Friday, July 17</div>
+            <div class="day-title">Service &amp; Maple Canyon</div>
+          </div>
+        </div>
+        <div class="day-body">
+          <ul class="timeline">
+            <li><span class="time">Morning</span><span class="event"><strong>Pancakes + bacon/sausage</strong></span></li>
+            <li><span class="time">8:30–10:30</span><span class="event"><strong>Service project</strong> <span class="highlight-badge badge-green">Give Back</span> — painting at the cabin</span></li>
+            <li><span class="time">10:45 AM</span><span class="event">Depart for Maple Canyon (~45 min) — brown bag lunches packed</span></li>
+            <li><span class="time">11:30–4 PM</span><span class="event"><strong>Maple Canyon</strong> <span class="highlight-badge badge-blue">Adventure</span> — bouldering, Box Canyon slot canyon scramble, Arch Trail, exploring</span></li>
+            <li><span class="time">Dinner</span><span class="event"><strong>Dutch Oven Challenge</strong> <span class="highlight-badge badge-amber">Team Comp</span> — cook-off between groups</span></li>
+            <li><span class="time">Evening</span><span class="event"><strong>Scripture Challenge</strong> — team activity</span></li>
+            <li><span class="time">Night</span><span class="event"><strong>Closing campfire</strong> &amp; testimony sharing</span></li>
+            <li><span class="time">10:30 PM</span><span class="event">Lights out</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Saturday -->
+      <div class="day-card">
+        <div class="day-header">
+          <div class="day-icon sat">🏠</div>
+          <div>
+            <div class="day-label">Day 4 · Saturday, July 18</div>
+            <div class="day-title">Pack Up &amp; Home</div>
+          </div>
+        </div>
+        <div class="day-body">
+          <ul class="timeline">
+            <li><span class="time">Morning</span><span class="event"><strong>Muffins for breakfast</strong></span></li>
+            <li><span class="time">After</span><span class="event"><strong>Cabin cleanup</strong> — all hands on deck</span></li>
+            <li><span class="time">Then</span><span class="event"><strong>Closing circle</strong> — send-off together</span></li>
+            <li><span class="time">10:30 AM</span><span class="event"><strong>Depart</strong> — home by ~noon</span></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- LOCATIONS -->
+<section id="locations">
+  <div class="container">
+    <div class="section-label">Where We'll Be</div>
+    <h2 class="section-title">Three Epic Spots</h2>
+    <p class="section-lead">From a mountain cabin with its own creek to a slot canyon carved through conglomerate rock — this trip covers serious ground.</p>
+
+    <div class="locations-grid">
+
+      <!-- Cabin -->
+      <div class="location-card">
+        <!-- ★ CABIN IMAGE PLACEHOLDER — replace div below with <img> tag or set src on existing img ★ -->
+        <div class="img-placeholder">
+          <div class="ph-icon">🏡</div>
+          <div class="ph-text">[Cabin Image]</div>
+        </div>
+        <!-- ★ END CABIN IMAGE PLACEHOLDER ★ -->
+        <div class="location-info">
+          <div class="location-eyebrow">Our Base Camp</div>
+          <h3 class="location-name">Skyline Mountain Resort</h3>
+          <div class="location-meta">
+            <span>Fairview, Utah</span>
+            <span class="dot"></span>
+            <span>~6,100 ft elevation</span>
+            <span class="dot"></span>
+            <span>1 hr 20 min from SLC</span>
+          </div>
+          <p class="location-desc">A family cabin with a creek running through the property, mountain views in every direction, and a sky dark enough to actually see the Milky Way. Some guys sleep inside, some pitch tents outside — both are part of the experience.</p>
+          <div class="activity-chips">
+            <span class="chip">Full kitchen</span>
+            <span class="chip">Fire pit</span>
+            <span class="chip">Tent camping</span>
+            <span class="chip">Creek access</span>
+            <span class="chip">Stargazing</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Palisade -->
+      <div class="location-card reverse">
+        <!-- ★ PALISADE IMAGE PLACEHOLDER ★ -->
+        <div class="img-placeholder">
+          <div class="ph-icon">🏊</div>
+          <div class="ph-text">[Palisade Image]</div>
+        </div>
+        <!-- ★ END PALISADE IMAGE PLACEHOLDER ★ -->
+        <div class="location-info">
+          <div class="location-eyebrow">Thursday's Big Day</div>
+          <h3 class="location-name">Palisade State Park</h3>
+          <div class="location-meta">
+            <span>Sterling, Utah</span>
+            <span class="dot"></span>
+            <span>~35 min from cabin</span>
+          </div>
+          <p class="location-desc">A lake in the middle of Utah's high plateau country — sand beach, warm water in July, and boats to rent. The perfect counterbalance to canyon scrambling. Spend six hours in the water and don't look back.</p>
+          <div class="activity-chips">
+            <span class="chip">Swimming</span>
+            <span class="chip">Sand beach</span>
+            <span class="chip">Paddleboards</span>
+            <span class="chip">Kayaking</span>
+            <span class="chip">Fishing</span>
+            <span class="chip">Lawn games</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Maple Canyon -->
+      <div class="location-card">
+        <!-- ★ MAPLE CANYON IMAGE PLACEHOLDER ★ -->
+        <div class="img-placeholder">
+          <div class="ph-icon">🧗</div>
+          <div class="ph-text">[Maple Canyon Image]</div>
+        </div>
+        <!-- ★ END MAPLE CANYON IMAGE PLACEHOLDER ★ -->
+        <div class="location-info">
+          <div class="location-eyebrow">Friday's Adventure</div>
+          <h3 class="location-name">Maple Canyon</h3>
+          <div class="location-meta">
+            <span>Sanpete County, Utah</span>
+            <span class="dot"></span>
+            <span>~45 min from cabin</span>
+          </div>
+          <p class="location-desc">One of Utah's most unique geological spots — conglomerate rock walls packed with stones like a giant's mosaic. Over 550 climbing routes, a famous narrow slot canyon called Box Canyon, and a trail leading to a natural arch. The canyon walls shade everything, so it stays cool even in July.</p>
+          <div class="activity-chips">
+            <span class="chip">Bouldering</span>
+            <span class="chip">Box Canyon scramble</span>
+            <span class="chip">Arch Trail</span>
+            <span class="chip">Rock climbing</span>
+            <span class="chip">Exploring</span>
+            <span class="chip">Shaded trails</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PACKING -->
+<section id="packing">
+  <div class="container">
+    <div class="section-label">Don't Forget</div>
+    <h2 class="section-title">Packing Essentials</h2>
+    <p class="section-lead">Here's what every guy needs to bring. A full detailed packing list will be shared closer to camp.</p>
+
+    <div class="packing-grid">
+      <div class="pack-item"><div class="pi">🛏</div><div class="pc"><div class="pt">Sleeping Bag</div><div class="ps">Nights get cool at elevation — don't skimp</div></div></div>
+      <div class="pack-item"><div class="pi">🏊</div><div class="pc"><div class="pt">Swim Trunks + Towel</div><div class="ps">Full day at Palisade — bring both</div></div></div>
+      <div class="pack-item"><div class="pi">👟</div><div class="pc"><div class="pt">Closed-Toe Shoes</div><div class="ps">Required for Maple Canyon — no sandals</div></div></div>
+      <div class="pack-item"><div class="pi">🎒</div><div class="pc"><div class="pt">Day Pack + Water Bottle</div><div class="ps">Hydration is everything at 6,000 ft</div></div></div>
+      <div class="pack-item"><div class="pi">📖</div><div class="pc"><div class="pt">Scriptures</div><div class="ps">Fireside, scripture challenge &amp; personal study</div></div></div>
+      <div class="pack-item"><div class="pi">🎨</div><div class="pc"><div class="pt">Old Clothes for Paint Day</div><div class="ps">Friday service project — expect to get messy</div></div></div>
+      <div class="pack-item"><div class="pi">🧥</div><div class="pc"><div class="pt">Layers / Light Jacket</div><div class="ps">Warm days, cool nights — canyon mornings too</div></div></div>
+      <div class="pack-item"><div class="pi">🧴</div><div class="pc"><div class="pt">Sunscreen + Toiletries</div><div class="ps">High elevation = strong UV — reapply often</div></div></div>
+      <div class="pack-item"><div class="pi">🔦</div><div class="pc"><div class="pt">Headlamp or Flashlight</div><div class="ps">Low light pollution means dark nights</div></div></div>
+      <div class="pack-item"><div class="pi">🪥</div><div class="pc"><div class="pt">Personal Medications</div><div class="ps">Bring enough + let a leader know</div></div></div>
+    </div>
+
+    <div class="packing-note">
+      <strong>Note:</strong> Meals are provided throughout camp — breakfast, lunch, and dinner. Bring a small amount of spending money only if you'd like something on the road. A detailed packing list with tent requirements, gear tips, and optional items will be sent separately.
+    </div>
+  </div>
+</section>
+
+<!-- SPIRITUAL -->
+<section id="spiritual">
+  <div class="container">
+    <div class="section-label">The Point of It All</div>
+    <h2 class="section-title">More Than Just a Trip</h2>
+    <p class="section-lead">Camp is designed to build faith, forge brotherhood, and give young men space to hear something they can't always hear in the noise of everyday life.</p>
+
+    <!-- ★ THEME PLACEHOLDER (Spiritual Section) — Replace with bishop's theme ★ -->
+    <div class="spiritual-theme-block">
+      <div class="placeholder-label2">⚑ Placeholder — Replace with Bishop's Theme</div>
+      <div class="sth-text">[Bishop's theme to be added — will tie to the 2026 Church Youth Theme]</div>
+      <div class="sth-sub">The theme will anchor our firesides, scripture challenge, and closing testimony meeting.</div>
+    </div>
+    <!-- ★ END THEME PLACEHOLDER ★ -->
+
+    <div class="spiritual-pillars">
+      <div class="pillar">
+        <div class="pi">🔥</div>
+        <h4>Thursday Fireside</h4>
+        <p>Our main spiritual evening — a message from leaders, personal reflection, and open discussion around the fire.</p>
+      </div>
+      <div class="pillar">
+        <div class="pi">⚒️</div>
+        <h4>Service Project</h4>
+        <p>Friday morning painting at the cabin — a hands-on reminder that discipleship looks like showing up and working.</p>
+      </div>
+      <div class="pillar">
+        <div class="pi">📖</div>
+        <h4>Scripture Challenge</h4>
+        <p>A Friday evening team activity — friendly competition with real scripture depth built in.</p>
+      </div>
+      <div class="pillar">
+        <div class="pi">🕯️</div>
+        <h4>Closing Testimony Meeting</h4>
+        <p>Friday night campfire — voluntary testimony sharing. Often the moment young men remember longest.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARENT INFO -->
+<section id="parents">
+  <div class="container">
+    <div class="section-label">For Parents</div>
+    <h2 class="section-title">Everything You Need to Know</h2>
+    <p class="section-lead">Here's the practical information for parents. Questions not answered here? Reach out to the contact below.</p>
+
+    <div class="parent-grid">
+
+      <div class="info-card">
+        <div class="ic-head">
+          <div class="ic-icon">🚗</div>
+          <div class="ic-title">Travel &amp; Route</div>
+        </div>
+        <ul>
+          <li>Depart ward building at 7:00 PM on Wednesday, July 15</li>
+          <li>Skyline Mountain Resort, Fairview, Utah (~1 hr 20 min from SLC)</li>
+          <li>Return home Saturday, July 18 by ~12:00 PM noon</li>
+          <li>Carpooling coordinated by leaders — details to follow</li>
+        </ul>
+      </div>
+
+      <div class="info-card">
+        <div class="ic-head">
+          <div class="ic-icon">📡</div>
+          <div class="ic-title">Cell Service &amp; Contact</div>
+        </div>
+        <ul>
+          <li>Cell service is limited in Fairview Canyon — plan accordingly</li>
+          <li>Leaders will have communication access for emergencies</li>
+          <li>Do not expect real-time texts or calls during the trip</li>
+          <li>Emergency contact info provided below</li>
+        </ul>
+      </div>
+
+      <div class="info-card">
+        <div class="ic-head">
+          <div class="ic-icon">💵</div>
+          <div class="ic-title">Cost to Families</div>
+        </div>
+        <ul>
+          <li>All meals are provided throughout camp</li>
+          <li>Activity costs (Palisade rentals, etc.) are covered</li>
+          <li>Cost per youth to be confirmed — contact leader for details</li>
+          <li>Financial assistance available — no one sits out for cost</li>
+        </ul>
+      </div>
+
+      <div class="info-card">
+        <div class="ic-head">
+          <div class="ic-icon">🏕️</div>
+          <div class="ic-title">Provided vs. Bring</div>
+        </div>
+        <ul>
+          <li><strong>Provided:</strong> All meals, water, first aid kit</li>
+          <li><strong>Provided:</strong> Transportation, activity fees</li>
+          <li><strong>Bring:</strong> Sleeping bag, personal gear, swim gear</li>
+          <li><strong>Bring:</strong> Scriptures, medications, personal toiletries</li>
+        </ul>
+      </div>
+
+      <div class="info-card">
+        <div class="ic-head">
+          <div class="ic-icon">📋</div>
+          <div class="ic-title">Required Forms</div>
+        </div>
+        <ul>
+          <li>Permission slip — <strong>deadline: [TBD]</strong></li>
+          <li>Medical/health form required for all participants</li>
+          <li>Forms will be distributed at [Sunday meeting or via email]</li>
+          <li>Return completed forms to [leader name] by deadline</li>
+        </ul>
+      </div>
+
+      <div class="info-card">
+        <div class="ic-head">
+          <div class="ic-icon">🛡️</div>
+          <div class="ic-title">Safety &amp; Supervision</div>
+        </div>
+        <ul>
+          <li>5–6 adult leaders in attendance at all times</li>
+          <li>All activities are age-appropriate and supervised</li>
+          <li>First aid kit on site; hospital ~30 min from cabin</li>
+          <li>Church youth protection standards followed</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="contact-block">
+      <div class="cb-text">
+        <h3>Emergency Contact</h3>
+        <p>If you cannot reach your son and have a genuine emergency during camp, contact the lead leader directly. Cell service is limited, so please allow time for a callback.</p>
+      </div>
+      <div class="cb-detail">
+        <div class="cdl">Lead Leader</div>
+        <div class="cdv placeholder">[Leader Name — placeholder]</div>
+        <div style="margin-top: 0.6rem;">
+          <div class="cdl">Phone</div>
+          <div class="cdv placeholder">[Phone Number — placeholder]</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA / FAQ -->
+<section id="cta">
+  <div class="container">
+    <h2 class="section-title">Ready? Got Questions?</h2>
+    <p class="section-lead">We've tried to cover everything here, but if something's missing or unclear — just reach out. We want every family to feel informed and every young man ready to go.</p>
+
+    <div class="faq-grid">
+      <div class="faq-item">
+        <h4>What if my son has dietary restrictions?</h4>
+        <p>Let us know before camp. We'll do our best to accommodate. Contact <strong>[leader name]</strong> directly.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Can I drop off / pick up early?</h4>
+        <p>Please plan to arrive and depart with the group. Early pickup needs leader coordination — contact us in advance.</p>
+      </div>
+      <div class="faq-item">
+        <h4>What about medications?</h4>
+        <p>Send all medications in original packaging with clear dosing instructions. Leaders will ensure proper administration.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Do boys need to bring their own tent?</h4>
+        <p>Only if they want to tent camp. The cabin has sleeping space for all. Tent campers bring their own gear.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Permission form deadline?</h4>
+        <p>Forms are due by <strong>[date — placeholder]</strong>. No young man can attend without a completed form on file.</p>
+      </div>
+      <div class="faq-item">
+        <h4>RSVP / Sign-Up</h4>
+        <p>Confirm your son's attendance by <strong>[RSVP date — placeholder]</strong> so we can finalize headcount and logistics.</p>
+      </div>
+    </div>
+
+    <div class="cta-buttons">
+      <a href="mailto:placeholder@email.com" class="btn-primary">Contact [Leader Name] ↗</a>
+      <a href="#home" class="btn-ghost">Back to Top ↑</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <strong>Young Men's Camp 2026</strong><br>
+  The Church of Jesus Christ of Latter-day Saints · Local Ward Young Men's Program<br>
+  Skyline Mountain Resort · Fairview, Utah · July 15–18, 2026
+</footer>
+
+</body>
+</html>
